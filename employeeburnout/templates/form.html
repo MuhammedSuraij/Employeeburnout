@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Burnout Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #ffffff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.1em;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #333;
+        }
+        input[type="number"], input[type="float"] {
+            max-width: 100%;
+        }
+        input:focus, select:focus {
+            border-color: #ffffff;
+            outline: none;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #388E3C;
+            color: white;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #66BB6A;
+        }
+        .form-group select {
+            background-color: #fff;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Burnout Calculator</h1>
+        <form method="POST" action="{% url 'burnout_test' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="employee_id">Employee ID</label>
+                <input type="text" id="employee_id" name="employee_id" required placeholder="Enter your Employee ID" value="{{ form.employee_id.value }}">
+            </div>
+            <div class="form-group">
+                <label for="date_of_joining">Date of Joining</label>
+                <input type="date" id="date_of_joining" name="date_of_joining" required value="{{ form.date_of_joining.value }}">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Female" {% if form.gender.value == 'female' %} selected {% endif %}>Female</option>
+                    <option value="Male" {% if form.gender.value == 'male' %} selected {% endif %}>Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="company_type">Company Type</label>
+                <select id="company_type" name="company_type" required>
+                    <option value="">Select Company Type</option>
+                    <option value="Service" {% if form.company_type.value == 'service' %} selected {% endif %}>Service</option>
+                    <option value="Product" {% if form.company_type.value == 'product' %} selected {% endif %}>Product</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="wfh_setup">WFH Setup Available</label>
+                <select id="wfh_setup" name="wfh_setup" required>
+                    <option value="">Select</option>
+                    <option value="Yes" {% if form.wfh_setup.value == 'yes' %} selected {% endif %}>Yes</option>
+                    <option value="No" {% if form.wfh_setup.value == 'no' %} selected {% endif %}>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation (Numeric)</label>
+                <input type="number" id="designation" name="designation" required placeholder="Enter designation number" value="{{ form.designation.value }}">
+            </div>
+            <div class="form-group">
+                <label for="resources_allocation">Resources Allocation</label>
+                <input type="number" id="resources_allocation" name="resources_allocation" required placeholder="Enter resources allocation number" value="{{ form.resources_allocation.value }}">
+            </div>
+            <div class="form-group">
+                <label for="mental_fatigue_score">Mental Fatigue Score</label>
+                <input type="number" step="0.1" id="mental_fatigue_score" name="mental_fatigue_score" required placeholder="Enter mental fatigue score" value="{{ form.mental_fatigue_score.value }}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

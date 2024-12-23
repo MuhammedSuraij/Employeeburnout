@@ -1,0 +1,175 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empolyee Burnout Analyse</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body, html {
+        height: 100%;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+  
+      /* Background Section */
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(71, 211, 136);
+        z-index: -1; /* Ensure the background stays behind text */
+      }
+  
+      /* Top Color Section */
+      svg
+      {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      @media (max-width: 480px){
+        svg
+      {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 400vw;
+      }
+      }
+      .container{
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            vertical-align: middle;
+            overflow: hidden;
+      }
+      /* Zigzag Separation at the Center */
+      
+      
+  
+      /* Header Styles */
+      h1 {
+        text-shadow: 3px 3px 5px rgb(8, 36, 21);
+        
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%; /* Start slightly below the top */
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+        animation: moveText 5s ease-in-out 1 forwards; 
+      }
+      @media (max-width: 768px){
+        h1 {
+
+        font-size: 45px;
+      
+      }
+      }
+      @media (max-width: 480px){
+        h1 {
+        font-size: 35px;
+       
+      }
+      }
+  
+      /* Text Animation */
+      
+      @keyframes moveButton {
+        0% {
+            top: 100%;
+          opacity: 0.3; /* Start with lower opacity */
+        }
+        100% {
+          top: 65%;  
+          opacity: 1; /* Full opacity when animation ends */
+        }
+      }
+      @media (max-width :480px){
+        
+      }
+      /* Button Styles */
+      .button {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: 70%; /* Move the button slightly further down */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(71, 211, 136);
+        padding: 15px 25px;
+        font-size: 20px;
+        color: #333;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        animation: moveButton 5s ease-in-out 1 forwards; /* Text moves from top to center */
+
+      }
+      
+      @media (max-width :480px)
+      {
+        .button {
+
+            font-size: x-small;
+            padding: 8px 16px;
+      }
+      }
+  
+      
+  
+      /* Show the button only after both animations complete */
+      .show-button {
+        display: block;
+        top: 65%; /* Adjusted button position */
+      }
+
+      @media (max-width :480px){
+        .show-button{
+            top: 70%;
+        }
+      }
+      @media (max-width :1222px){
+        .show-button{
+            top: 70%;
+        }
+      }
+  
+  
+      /* Ensure the stroke of the zigzag is white */
+      
+    </style>
+  </head>
+  <body>
+    <div class="background " >
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" >
+            <path d="M0 ,100 C150 ,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: rgb(251, 251, 255); fill: rgb(164, 238, 144);"></path>
+        </svg>
+      
+      <!-- Zigzag Separation at the Center -->
+      
+      
+    </div>
+  
+    <h1>Employee Burnout Calculator</h1>
+    <a href="{% url 'burnout_test' %}">
+    <button class="button show-button">Get Started</button></a>
+
+  
+  
+  </body></html>
