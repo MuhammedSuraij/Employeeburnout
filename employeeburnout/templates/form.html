@@ -71,6 +71,25 @@
         .form-group select {
             background-color: #fff;
         }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .nav-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-buttons a:hover {
+            background-color: #66BB6A;
+        }
+
+        /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em;
@@ -82,7 +101,30 @@
                 margin-bottom: 15px;
             }
         }
+
+        /* Chatbot styling (fixed bubble at bottom-right) */
+        .chatbase-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
     </style>
+
+    <!-- Embed Chatbot Script -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "FtocrgHQparH7L4Gmfqon",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="FtocrgHQparH7L4Gmfqon"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+
 </head>
 <body>
     <div class="container">
@@ -137,6 +179,21 @@
                 <button type="submit" class="btn-submit">Submit</button>
             </div>
         </form>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="{% url 'home' %}">Go to Home</a>
+            <a href="{% url 'about' %}">About</a>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Employee Burnout Prediction System by Muhammed Suraij C V</p>
+    </div>
+
+    <!-- Chatbot Bubble (Fixed position at bottom-right) -->
+    <div class="chatbase-bubble"></div>
+
 </body>
 </html>

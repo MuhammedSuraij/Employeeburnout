@@ -83,17 +83,17 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .container {
                 padding: 15px;
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
             .prediction-details {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
 
             .prediction-box {
@@ -107,7 +107,7 @@
 
             .nav-buttons a {
                 margin: 10px 0;
-                font-size: 1.1em;
+                font-size: 1.2em;
                 padding: 12px 30px;
             }
 
@@ -116,23 +116,47 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .prediction-details {
+                font-size: 1.5em;
+            }
+
+            .prediction-box {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+
+            .nav-buttons a {
+                font-size: 1.1em;
+                padding: 10px 25px;
+            }
+
+            .footer {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-height: 430px) {
             h1 {
                 font-size: 1.8em;
             }
 
             .prediction-details {
-                font-size: 1.2em;
+                font-size: 1.3em;
             }
 
             .prediction-box {
-                font-size: 1.5em;
-                padding: 10px;
+                font-size: 1.3em;
+                padding: 12px;
             }
 
             .nav-buttons a {
                 font-size: 1em;
-                padding: 10px 25px;
+                padding: 10px 20px;
             }
 
             .footer {
@@ -147,28 +171,52 @@
             }
 
             .prediction-details {
-                font-size: 1.1em;
+                font-size: 1.2em;
             }
 
             .prediction-box {
-                font-size: 1.3em;
-                padding: 8px;
+                font-size: 1.2em;
+                padding: 10px;
             }
 
             .prediction-box p {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
 
             .nav-buttons a {
                 font-size: 0.9em;
-                padding: 10px 20px;
+                padding: 8px 15px;
             }
 
             .footer {
                 font-size: 0.75em;
             }
         }
+
+        /* Chatbot styling (fixed bubble at bottom-right) */
+        .chatbase-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
     </style>
+
+    <!-- Embed Chatbot Script -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "FtocrgHQparH7L4Gmfqon",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="FtocrgHQparH7L4Gmfqon"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+
 </head>
 <body>
 

@@ -1,7 +1,9 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empolyee Burnout Analyse</title>
+    <title>Employee Burnout Analyze</title>
     <style>
       * {
         margin: 0;
@@ -37,16 +39,8 @@
         top: 0;
         left: 0;
       }
-      @media (max-width: 480px){
-        svg
-      {
-        display: inline-block;
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 400vw;
-      }
-      }
+      
+      
       .container{
             display: inline-block;
             position: relative;
@@ -56,7 +50,6 @@
             overflow: hidden;
       }
       /* Zigzag Separation at the Center */
-      
       
   
       /* Header Styles */
@@ -75,15 +68,12 @@
       }
       @media (max-width: 768px){
         h1 {
-
         font-size: 45px;
-      
       }
       }
       @media (max-width: 480px){
         h1 {
         font-size: 35px;
-       
       }
       }
   
@@ -119,19 +109,15 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         z-index: 2;
         animation: moveButton 5s ease-in-out 1 forwards; /* Text moves from top to center */
-
       }
       
       @media (max-width :480px)
       {
         .button {
-
             font-size: x-small;
             padding: 8px 16px;
       }
       }
-  
-      
   
       /* Show the button only after both animations complete */
       .show-button {
@@ -150,26 +136,39 @@
         }
       }
   
-  
       /* Ensure the stroke of the zigzag is white */
-      
+  
     </style>
-  </head>
-  <body>
-    <div class="background " >
-        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" >
+
+    <!-- Chatbot Script -->
+    <script>
+      window.embeddedChatbotConfig = {
+        chatbotId: "FtocrgHQparH7L4Gmfqon", // Replace with your chatbot ID
+        domain: "www.chatbase.co"
+      }
+    </script>
+    <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="FtocrgHQparH7L4Gmfqon"
+      domain="www.chatbase.co"
+      defer>
+    </script>
+  
+</head>
+<body>
+    <div class="background">
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
             <path d="M0 ,100 C150 ,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: rgb(251, 251, 255); fill: rgb(164, 238, 144);"></path>
         </svg>
-      
-      <!-- Zigzag Separation at the Center -->
-      
-      
     </div>
-  
+
     <h1>Employee Burnout Calculator</h1>
     <a href="{% url 'burnout_test' %}">
-    <button class="button show-button">Get Started</button></a>
+      <button class="button show-button">Get Started</button>
+    </a>
 
-  
-  
-  </body></html>
+    <!-- Chatbot bubble will appear in the bottom-right of the screen -->
+    <div class="chatbase-bubble"></div>
+
+</body>
+</html>
