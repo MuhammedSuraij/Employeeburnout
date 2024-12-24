@@ -3,6 +3,8 @@ import pandas as pd
 from .train_burnout_model import BurnoutModel
 from django.http import HttpResponseBadRequest
 from .models import BurnoutForm
+
+
 # Create your views here.
 def indexview(request):
     return render (request,'index.html')
