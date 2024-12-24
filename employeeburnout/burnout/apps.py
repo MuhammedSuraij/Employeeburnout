@@ -12,7 +12,7 @@ class BurnoutConfig(AppConfig):
         data_file=os.path.join(app_dir,'employee_burnout_analysis-AI 2.xlsx')
 
         try:
-            print("training th model")
+            print("training the model")
             BurnoutModel.train_model(data_file)
             print("train complete")
         except Exception as e:
