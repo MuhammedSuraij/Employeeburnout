@@ -9,7 +9,7 @@ class BurnoutConfig(AppConfig):
 
     def ready(self):
         app_dir=os.path.dirname(__file__)
-        data_file=os.path.join(app_dir,'D:\Employeeburnout\employeeburnout\burnout\employee_burnout_analysis-AI 2.xlsx')
+        data_file=os.path.join(app_dir,'employee_burnout_analysis-AI 2.xlsx')
 
         try:
             print("training th model")
